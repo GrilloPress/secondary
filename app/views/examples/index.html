@@ -1,6 +1,6 @@
-{% set PROTOTYPEURL = "" %}
+{% set PROTOTYPEURL = "examples" %}
 {% set serviceName = "Secondary uses of data" %}
-{% set contentTitle = "Prototypes" %}
+{% set contentTitle = "Examples" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -22,16 +22,21 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
+      {{ backLink({
+        "href": "/",
+        "text": "Back to home"
+      }) }}
+
       <h1>
         {{ contentTitle }}
-        <span class="nhsuk-caption-xl nhsuk-caption--bottom"> {{ serviceName }}</span>
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom"> Ready made examples to copy</span>
       </h1>
 
       <ul class="app-list--unstyled app-list-cards">
         <li class="app-list-cards__item">
-          <a href="/examples/index">
-            <h2 class="app-list-cards__heading nhsuk-heading-m">Example components</h2>
-            <p>Ready made examples to copy</p>
+          <a href="/{{ PROTOTYPEURL }}/card">
+            <h2 class="app-list-cards__heading nhsuk-heading-m">Card</h2>
+            <p>In-service content card</p>
           </a>
         </li>
       </ul>

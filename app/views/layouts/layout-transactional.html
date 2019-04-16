@@ -7,6 +7,10 @@
 <!-- nhsuk-main-wrapper--s reduces top and bottom padding of the page -->
 {% set mainClasses = 'nhsuk-main-wrapper--s' %}
 
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+{% endblock %}
+
 <!-- Set the page title inside this block -->
 {% block pageTitle %}
   Transactional page layout
@@ -16,8 +20,8 @@
 {% block header %}
   {{ header({
     "transactionalService": {
-        "name": "Service name goes here",
-        "href": "/"
+        "name": serviceName,
+        "href": "/" + PROTOTYPEURL
       },
       "showNav": "false",
       "showSearch": "false"
