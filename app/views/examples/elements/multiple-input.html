@@ -23,19 +23,38 @@
     <div class="nhsuk-grid-column-two-thirds">
       <form action="#" method="get">
 
+        {% call fieldset({
+          "legend": {
+            "text": contentTitle,
+            "classes": "nhsuk-fieldset__legend--xl",
+            "isPageHeading": true
+          }
+        }) %}
+
         {{ input({
           "label": {
-            "text": contentTitle,
-            "isPageHeading": true,
-            "classes": "nhsuk-label--xl"
+            "text": "First names",
+            "isPageHeading": false
           },
-          "hint": {
-            "text": "Be honest"
-          },
-          "id": "inputnhsnumber",
-          "name": "nhsnumber",
+          "id": "inputfirstname",
+          "name": "firstname",
           "classes": "nhsuk-input--width-30"
         }) }}
+
+        {{ input({
+          "label": {
+            "text": "Last name",
+            "isPageHeading": false
+          },
+          "id": "inputlastname",
+          "name": "lastname",
+          "classes": "nhsuk-input--width-30"
+        }) }}
+
+
+        {% endcall %}
+
+
 
         <input type="submit" class="nhsuk-button" value="Continue">
         </input>
