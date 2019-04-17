@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "examples" %}
 {% set serviceName = "Secondary uses of data" %}
-{% set contentTitle = "Example card" %}
+{% set contentTitle = "Example interruption card" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -25,7 +25,7 @@
       <div class="app-interruption">
         <div class="app-interruption__wrapper">
           <div class="app-interruption__content">
-            <h1 class="app-card__heading nhsuk-heading-l">This is an interruption card</h1>
+            <h1 class="app-card__heading nhsuk-heading-l">{{ contentTitle }}</h1>
             <p>
               We'll need your:
             </p>
@@ -39,7 +39,6 @@
             </p>
             <form action="#" method="get">
               <input type="submit" class="nhsuk-button nhsuk-button--reverse" value="Continue">
-              
             </form>
           </div>
         </div>
