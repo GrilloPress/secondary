@@ -22,26 +22,27 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      {{ backLink({
-        "href": "/",
-        "text": "Back to home"
-      }) }}
-
       <h1>
         {{ contentTitle }}
-        <span class="nhsuk-caption-xl nhsuk-caption--bottom"> Ready made examples to copy</span>
       </h1>
+
+      <p>Ready made examples to copy</p>
+
+      <h2>Pages</h2>
 
       <ul class="app-list--unstyled app-list-cards">
         <li class="app-list-cards__item">
           <a href="/{{ PROTOTYPEURL }}/card">
-            <h2 class="app-list-cards__heading nhsuk-heading-m">Card</h2>
+            <h3 class="app-list-cards__heading nhsuk-heading-m">Card</h3>
             <p>In-service content card</p>
           </a>
         </li>
       </ul>
 
-
+      {{ backLink({
+        "href": "/",
+        "text": "Back to home"
+      }) }}
     </div>
   </div>
 {% endblock %}
