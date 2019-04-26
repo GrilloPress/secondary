@@ -1,0 +1,38 @@
+{% set PROTOTYPEURL = "register-as-a-data-donor/v1/your-profile" %}
+{% set serviceName = "Register as a data donor" %}
+{% set contentTitle = "Your data donor profile" %}
+{% set title = contentTitle + " - " + serviceName %}
+{% block pageScripts %}
+{% endblock %}
+
+
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layouts/layout-transactional.html' %}
+
+<!-- Set the page title inside this block -->
+{% block pageTitle %}
+  {{ title }}
+{% endblock %}
+
+<!-- Breadcrumb goes inside this block -->
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>{{ contentTitle }}</h1>
+
+      <form action="/{{ PROTOTYPEURL }}/see-how-your-data-has-been-shared" method="get">
+
+        <input type="submit" class="nhsuk-button" value="See how your data has been shared">
+        </input>
+
+      </form>
+
+      <p><a href="/register-as-a-data-donor/v1/contact-preference/change-contact-preference">Change your contact preference</a><p>
+
+    </div>
+  </div>
+{% endblock %}
