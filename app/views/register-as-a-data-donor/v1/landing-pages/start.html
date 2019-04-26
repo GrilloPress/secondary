@@ -1,0 +1,62 @@
+{% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
+{% set serviceName = "Register as a data donor" %}
+{% set contentTitle = "V1" %}
+{% set title = contentTitle + " - " + serviceName %}
+{% block pageScripts %}
+{% endblock %}
+
+{% extends 'layouts/layout-nhsuk.html' %}
+
+{% block pageTitle %}
+  {{ title }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "/" + PROTOTYPEURL,
+        text: "Home"
+      }
+    ],
+    href: "/" + PROTOTYPEURL + "/overview",
+    text: serviceName
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        {{ contentTitle }}
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom ">
+          {{ serviceName}}
+        </span>
+      </h1>
+
+      <p>Use this service to: </p>
+      <ul>
+        <li>register as a data donor </li>
+      </ul>
+      <p>Any choice you make will not change your individual care.</p>
+
+        <h2 id="before-you-start">Before you start</h2>
+        <p>You must be aged 13 or over to use this service online. You need:</p>
+        <ul>
+          <li>access to your email or mobile phone </li>
+          <li>your NHS number </li>
+          <div class="nhsuk-u-margin-bottom-2">
+            or
+          </div>
+          <li>your postcode registered with your GP surgery </li>
+        </ul>
+
+
+        <form class="" action="" method="get">
+          <input class="nhsuk-button" type="submit" value="Start now" aria-label="Start the online '{{ serviceName }}' service">
+        </form>
+
+    </div>
+  </div>
+{% endblock %}
