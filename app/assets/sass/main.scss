@@ -13,3 +13,18 @@
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
+
+li:last-of-type ul {
+
+  &::before {
+
+    content: "";
+    display: block;
+    @include nhsuk-responsive-margin(2, 'bottom');
+  }
+
+}
+
+li ul {
+    margin-bottom: 0;
+}
