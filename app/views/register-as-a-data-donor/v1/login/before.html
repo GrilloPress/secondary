@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
 {% set serviceName = "Register as a data donor" %}
-{% set contentTitle = "Check you can register as a data donor" %}
+{% set contentTitle = "You now need to log in or create an NHS login to register as a data donor" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -27,23 +27,20 @@
           <div class="app-card__content">
             <h1 class="app-card__heading nhsuk-heading-l">{{ contentTitle }}</h1>
             <p>
-            To register as a data donor we need to ask you a few questions
+            We’ll use your NHS login to:
             </p>
             <ul>
-              <li>where you live</li>
-              <li>your age</li>
+              <li>check who you are</li>
+              <li>use your login details to register you </li>
             </ul>
-            <form action="/{{ PROTOTYPEURL}}/eligibility/are-you-13-or-above" method="get">
+            <p>Read our <a href="#">privacy notice</a> for more information.</p>
+            <form action="/{{ PROTOTYPEURL}}/login/do-you-have-an-nhs-login" method="get">
               <input type="submit" class="nhsuk-button" value="Continue">
               </input>
             </form>
           </div>
         </div>
       </div>
-
-      <p>If you've checked your eligibility before, you can <a href="#">register as a data donor</a> </p>
-
-
 
     </div>
   </div>

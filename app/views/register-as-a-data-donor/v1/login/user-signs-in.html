@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
 {% set serviceName = "Register as a data donor" %}
-{% set contentTitle = "Check you can register as a data donor" %}
+{% set contentTitle = "You would sign in" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -22,28 +22,24 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <div class="app-card">
-        <div class="app-card__wrapper">
-          <div class="app-card__content">
+      <div class="app-interruption">
+        <div class="app-interruption__wrapper">
+          <div class="app-interruption__content">
             <h1 class="app-card__heading nhsuk-heading-l">{{ contentTitle }}</h1>
             <p>
-            To register as a data donor we need to ask you a few questions
+              Using your NHS login you would sign in
             </p>
-            <ul>
-              <li>where you live</li>
-              <li>your age</li>
-            </ul>
-            <form action="/{{ PROTOTYPEURL}}/eligibility/are-you-13-or-above" method="get">
-              <input type="submit" class="nhsuk-button" value="Continue">
-              </input>
+            <form action="/{{ PROTOTYPEURL }}/register/do-you-want-register-3" method="get">
+              <input type="submit" class="nhsuk-button nhsuk-button--reverse" value="Continue">
             </form>
           </div>
         </div>
       </div>
 
-      <p>If you've checked your eligibility before, you can <a href="#">register as a data donor</a> </p>
-
-
+      {{ backLink({
+        "href": "../index",
+        "text": "Back to list"
+      }) }}
 
     </div>
   </div>
