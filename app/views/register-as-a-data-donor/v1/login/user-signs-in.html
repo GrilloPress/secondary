@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
 {% set serviceName = "Register as a data donor" %}
-{% set contentTitle = "You would sign in" %}
+{% set contentTitle = "You would sign in or create an account" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -27,9 +27,9 @@
           <div class="app-interruption__content">
             <h1 class="app-card__heading nhsuk-heading-l">{{ contentTitle }}</h1>
             <p>
-              Using your NHS login you would sign in
+              You would now either create an account or sign in to your NHS login
             </p>
-            <form action="/{{ PROTOTYPEURL }}/register/do-you-want-register-3" method="get">
+            <form action="/{{ PROTOTYPEURL }}/register/do-you-want-to-register-3" method="get">
               <input type="submit" class="nhsuk-button nhsuk-button--reverse" value="Continue">
             </form>
           </div>
