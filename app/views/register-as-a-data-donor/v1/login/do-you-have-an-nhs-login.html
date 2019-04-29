@@ -21,7 +21,7 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="" method="post">
+      <form action="/{{ PROTOTYPEURL }}/login/user-signs-in" method="post">
         {{ radios({
           "idPrefix": "gov",
           "name": "age",
