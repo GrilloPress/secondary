@@ -1,4 +1,4 @@
-{% set PROTOTYPEURL = "register-as-a-data-donor/v1/register" %}
+{% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
 {% set serviceName = "Register as a data donor" %}
 {% set contentTitle = "We've added you to the data donor register" %}
 {% set title = contentTitle + " - " + serviceName %}
@@ -24,10 +24,10 @@
 
       <h1>{{ contentTitle }}</h1>
 
-      <form action="/{{ PROTOTYPEURL }}/future-contact-preference" method="get">
+      <form action="" method="post">
         {{ radios({
-          "idPrefix": "gov",
-          "name": "gov",
+          "idPrefix": "nhs",
+          "name": "confirmationChannel",
           "fieldset": {
             "legend": {
               "text": "Where should we send you confirmation?",
@@ -37,11 +37,11 @@
           "items": [
             {
               "value": "email",
-              "text": "By email"
+              "text": "By email to jane.doe@gmail.com"
             },
             {
               "value": "text",
-              "text": "By text"
+              "text": "By text to 00789101173"
             }
           ]
         }) }}
