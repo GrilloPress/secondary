@@ -26,8 +26,8 @@
 
       <form action="/{{ PROTOTYPEURL }}/contact-preference-saved" method="get">
         {{ radios({
-          "idPrefix": "gov",
-          "name": "gov",
+          "idPrefix": "nhs",
+          "name": "contactPreference",
           "fieldset": {
             "legend": {
               "text": "In the future how would you prefer to be contacted?",
@@ -37,11 +37,11 @@
           "items": [
             {
               "value": "email",
-              "text": "By email"
+              "text": "By email to jane.doe@gmail.com"
             },
             {
               "value": "text",
-              "text": "By text"
+              "text": "By text to 00789101173"
             }
           ]
         }) }}
