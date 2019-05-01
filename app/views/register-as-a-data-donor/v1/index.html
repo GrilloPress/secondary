@@ -21,11 +21,22 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "../index",
+        "text": "Back to prototype list"
+      }) }}
 
       <h1>
         {{ contentTitle }}
         <span class="nhsuk-caption-xl nhsuk-caption--bottom"> {{ serviceName }}</span>
       </h1>
+      <p>
+        A prototype to explore:
+      </p>
+      <ul>
+        <li>whether people would be happy to share data proactively with the NHS</li>
+        <li>what things about a study make people willing to share their data with it</li>
+      </ul>
 
       <h2>Landing pages</h2>
       <ul>
@@ -97,8 +108,8 @@
       </li>
     </ul>
 
-      <h2>Your donor profile</h2>
-      <ul>
+    <h2>Your donor profile</h2>
+    <ul>
       <li>
         <a href="/{{ PROTOTYPEURL }}/your-profile/your-data-donor-profile">Your data donor profile</a>
       </li>
@@ -114,15 +125,6 @@
       <h2>Other</h2>
       <h3>Messages</h3>
       <h3>Errors</h3>
-
-      <ul>
-        <li>
-          <a href="/v1/start">
-            Start page
-          </a>
-        </li>
-      </ul>
-
 
     </div>
   </div>
