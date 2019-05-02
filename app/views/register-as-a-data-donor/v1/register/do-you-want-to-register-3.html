@@ -1,7 +1,7 @@
-{% set PROTOTYPEURL = "register-as-a-data-donor/v1/register" %}
+{% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
 {% set serviceName = "Register as a data donor" %}
 {% set contentTitle = "Register as a data donor" %}
-{% set question = "Are you sure you want to register as a data donor?" %}
+{% set question = "Confirm you want to register as a data donor" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -30,7 +30,7 @@
     <li>contact you if we match you to a research study to check you're happy for your data to be shared</li>
   </ul>
 
-  <form action="/{{ PROTOTYPEURL }}/weve-added-you" method="get">
+  <form action="/{{ PROTOTYPEURL }}/register/weve-added-you" method="get">
     {{ checkboxes({
       "idPrefix": "yes",
       "name": "yes",
