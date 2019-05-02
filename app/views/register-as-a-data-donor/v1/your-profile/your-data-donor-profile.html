@@ -1,4 +1,4 @@
-{% set PROTOTYPEURL = "register-as-a-data-donor/v1/your-profile" %}
+{% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
 {% set serviceName = "Register as a data donor" %}
 {% set contentTitle = "Your data donor profile" %}
 {% set title = contentTitle + " - " + serviceName %}
@@ -24,7 +24,7 @@
 
       <h1>{{ contentTitle }}</h1>
 
-      <form action="/{{ PROTOTYPEURL }}/see-how-your-data-has-been-shared" method="get">
+      <form action="/{{ PROTOTYPEURL }}/your-profile/see-how-your-data-has-been-shared" method="get">
 
         <input type="submit" class="nhsuk-button" value="See how your data has been shared">
         </input>
