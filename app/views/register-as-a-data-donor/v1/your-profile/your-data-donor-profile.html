@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
 {% set serviceName = "Register as a data donor" %}
-{% set contentTitle = "Your data donor profile" %}
+{% set contentTitle = "Your profile" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -23,15 +23,26 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1>{{ contentTitle }}</h1>
-
-      <form action="/{{ PROTOTYPEURL }}/your-profile/see-how-your-data-has-been-shared" method="get">
-
-        <input type="submit" class="nhsuk-button" value="See how your data has been shared">
-        </input>
-
-      </form>
-
-      <p><a href="/register-as-a-data-donor/v1/contact-preference/change-contact-preference">Change your contact preference</a><p>
+      <ul class="app-list--unstyled app-list-cards">
+        <li class="app-list-cards__item">
+          <a href="/{{ PROTOTYPEURL }}/v1/index">
+            <h2 class="app-list-cards__heading nhsuk-heading-s">See how your data has been shared </h2>
+          </a>
+        </li>
+      </ul>
+      <h2>Manage your profile</h2>
+      <ul class="app-list--unstyled app-list-cards">
+        <li class="app-list-cards__item">
+          <a href="/{{ PROTOTYPEURL }}/v1/index">
+            <h3 class="app-list-cards__heading nhsuk-heading-s">Change your contact preference </h3>
+          </a>
+        </li>
+        <li class="app-list-cards__item">
+          <a href="/{{ PROTOTYPEURL }}/v1/index">
+            <h3 class="app-list-cards__heading nhsuk-heading-s">Stop sharing your data </h3>
+          </a>
+        </li>
+      </ul>
 
     </div>
   </div>
