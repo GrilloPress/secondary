@@ -24,13 +24,13 @@
 
       <h1>{{ contentTitle }}</h1>
 
-      <p>We will contact you by email</p>
+      <p>We will contact you by <strong>{{ data['contactPreference'] }}</strong>.</p>
 
       <p>You can change your contact preference at any time.</p>
 
 
             {{ backLink({
-              "href": "/register-as-a-data-donor/v1/your-profile/your-data-donor-profile-2",
+              "href": "/register-as-a-data-donor/v1/your-profile/your-data-donor-profile",
               "text": "Back to your data donor profile"
             }) }}
 
