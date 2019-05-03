@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
 {% set serviceName = "Register as a data donor" %}
-{% set contentTitle = "You need to speak to NHS login" %}
+{% set contentTitle = "You need to speak to NHS login to update your details" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -24,7 +24,8 @@
 
       <h1>{{ contentTitle }}</h1>
 
-      <p>You cannot register as a data donor</p>
+      <p>You cannot register as a data donor until NHS login have your correct details.</p>
+
     </div>
   </div>
 {% endblock %}
