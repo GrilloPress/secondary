@@ -14,21 +14,13 @@
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
 
-
-li ul::before {
-
-  content: "";
-  display: block;
-  @include nhsuk-responsive-margin(2, 'bottom');  // or $whateverTheRightVariableIsMate
-}
-
-li + ul::before {
-
-  content: "";
-  display: block;
-  @include nhsuk-responsive-margin(2, 'bottom');  // or $whateverTheRightVariableIsMate
-}
-
 li ul {
-    margin-bottom: 0;
+  margin-bottom: 0;
+
+  &::before {
+    content: "";
+    display: block;
+    @include nhsuk-responsive-margin(2, 'bottom');  // or $whateverTheRightVariableIsMate
+
+  }
 }
