@@ -75,9 +75,6 @@ router.post('/register-as-a-data-donor/v1/eligibility/are-you-13-or-above', func
   }
 });
 
-
-// Add your routes here - above the module.exports line
-
 router.post('/register-as-a-data-donor/v1/register/weve-added-you', function (req, res) {
   let answer = req.body.confirmationChannel;
 
@@ -93,5 +90,25 @@ router.post('/register-as-a-data-donor/v1/register/weve-added-you', function (re
     res.redirect('error')
   }
 });
+
+router.post('/register-as-a-data-donor/v1/register/check-your-details', function (req, res) {
+  let answer = req.body.checkDetails;
+
+  if (answer === 'yes') { // the || means this OR that
+
+    res.redirect('/register-as-a-data-donor/v1/register/do-you-want-to-register-3')
+
+  } else if (answer === 'no' ) {
+
+    res.redirect('/register-as-a-data-donor/v1/register/contact-nhs-login')
+
+  } else {
+    res.redirect('error')
+  }
+});
+
+
+
+// Add your routes here - above the module.exports line
 
 module.exports = router;
