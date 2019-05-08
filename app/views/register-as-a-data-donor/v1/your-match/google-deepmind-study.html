@@ -1,0 +1,68 @@
+{% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
+{% set serviceName = "Register as a data donor" %}
+{% set contentTitle = "Research study into Crohn's disease in 18 to 30 year olds" %}
+{% set question = "Are you happy to share your data with Google DeepMind?" %}
+{% set title = contentTitle + " - " + serviceName %}
+{% block pageScripts %}
+{% endblock %}
+
+
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layouts/layout-transactional.html' %}
+
+<!-- Set the page title inside this block -->
+{% block pageTitle %}
+  {{ title }}
+{% endblock %}
+
+<!-- Breadcrumb goes inside this block -->
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>{{ contentTitle }}</h1>
+
+      <h2>Researchers</h2>
+
+      <p>Google DeepMind</p>
+
+      <h2>Length of research study</h2>
+
+      <p>6 months</p>
+
+
+        <form action="/{{ PROTOTYPEURL }}/your-match/match-confirmed" method="get">
+          {{ radios({
+            "idPrefix": "yes",
+            "name": "yes",
+            "fieldset": {
+              "legend": {
+                "text": question,
+                "classes": "nhsuk-fieldset__legend--m",
+                "isPageHeading": true
+              }
+            },
+            "items": [
+              {
+                "value": "yes",
+                "text": "Yes"
+              },
+              {
+                "value": "no",
+                "text": "No"
+              }
+            ]
+          }) }}
+
+          <input type="submit" class="nhsuk-button" value="Confirm">
+          </input>
+
+        </form>
+
+
+    </div>
+  </div>
+{% endblock %}
