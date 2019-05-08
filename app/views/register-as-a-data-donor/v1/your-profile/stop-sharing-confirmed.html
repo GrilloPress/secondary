@@ -5,6 +5,13 @@
 {% block pageScripts %}
 {% endblock %}
 
+{% set contactPreference %}
+  {% if data['contactPreference'] %}
+    {{ data['contactPreference'] }}
+  {% else %}
+    email
+  {% endif %}
+{% endset %}
 
 <!-- Extends the layout from /app/views/layouts/layout.html -->
 {% extends 'layouts/layout-transactional.html' %}
@@ -24,7 +31,7 @@
 
       <h1>{{ contentTitle }}</h1>
 
-      <p>We've sent you confirmation by {{ data['contactPreference'] }}</p>
+      <p>We've sent you confirmation by {{ contactPreference }}.</p>
 
       <p>We'll no longer contact you.</p>
 
