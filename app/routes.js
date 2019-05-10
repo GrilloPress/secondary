@@ -107,6 +107,22 @@ router.post('/register-as-a-data-donor/v1/register/check-your-details', function
   }
 });
 
+router.post('/register-as-a-data-donor/v1/your-match/google-deepmind-study', function (req, res) {
+  let answer = req.body.researchStudy;
+
+  if (answer === 'yes') { // the || means this OR that
+
+    res.redirect('/register-as-a-data-donor/v1/your-match/we-will-share-your-data')
+
+  } else if (answer === 'no' ) {
+
+    res.redirect('/register-as-a-data-donor/v1/your-match/we-wont-share-your-data')
+
+  } else {
+    res.redirect('error')
+  }
+});
+
 
 
 // Add your routes here - above the module.exports line

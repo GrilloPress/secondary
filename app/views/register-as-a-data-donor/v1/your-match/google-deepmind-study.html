@@ -1,7 +1,7 @@
 {% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
 {% set serviceName = "Register as a data donor" %}
 {% set contentTitle = "Research study into Crohn's disease in 18 to 30 year olds" %}
-{% set question = "Are you happy to share your data with Google DeepMind?" %}
+{% set question = "Are you happy to share your data with Google DeepMind for this research study?" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -34,10 +34,10 @@
       <p>6 months</p>
 
 
-        <form action="/{{ PROTOTYPEURL }}/your-match/match-confirmed" method="get">
+        <form action="/{{ PROTOTYPEURL }}/your-match/google-deepmind-study" method="post">
           {{ radios({
             "idPrefix": "yes",
-            "name": "yes",
+            "name": "researchStudy",
             "fieldset": {
               "legend": {
                 "text": question,
