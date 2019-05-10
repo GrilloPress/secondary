@@ -5,12 +5,6 @@
 {% block pageScripts %}
 {% endblock %}
 
-{% set researchContactPreference %}
-  {% if data['researchContactPreference'] %}
-    {{ data['researchContactPreference'] | lower }}
-  {% endif %}
-{% endset %}
-
 <!-- Extends the layout from /app/views/layouts/layout.html -->
 {% extends 'layouts/layout-transactional.html' %}
 
@@ -29,17 +23,22 @@
 
       <h1>{{ contentTitle }}</h1>
 
-<p>
-`{{ "We will send you an update about this research study" if data['researchContactPreference'] == 'week' }}`
-`{{ "We will send you an update about this research study" if data['researchContactPreference'] == 'month' }}`
-`{{ "We will send you an update about this research study" if data['researchContactPreference'] == 'finished' }}`
-`{{ "We will not send you any updates about this research study" if data['researchContactPreference'] == 'never' }}`
-</p>
+      {% if data['researchContactPreference'] == 'never' %}
+        <p>We will not send you any updates about this research study.</p>
+      {% else %}
+        {% if data['researchContactPreference'] == 'week' %}
+          <p>We will send you an update about this research study once a week</p>
+        {% elif data['researchContactPreference'] == 'month' %}
+          <p>We will send you an update about this research study once a month</p>
+        {% else %}
+          <p>We will send you an update about this research study when it has finished</p>
+        {% endif %}
+      {% endif %}
 
-            {{ backLink({
-              "href": "/register-as-a-data-donor/v1/your-profile/your-data-donor-profile",
-              "text": "Back to your data donor profile"
-            }) }}
+      {{ backLink({
+        "href": "/register-as-a-data-donor/v1/your-profile/your-data-donor-profile",
+        "text": "Back to your data donor profile"
+      }) }}
 
     </div>
   </div>
