@@ -1,7 +1,7 @@
 {% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
 {% set serviceName = "Register as a data donor" %}
-{% set contentTitle = "Stop sharing your data" %}
-{% set question = "Confirm you want to stop sharing your data" %}
+{% set contentTitle = "Get removed from the data donor register" %}
+{% set question = "Do you want us to remove you from the data donor register?" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -23,6 +23,13 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
+
+            {{ backLink({
+              "href": "../your-profile/your-data-donor-profile",
+              "text": "Back to your data donor profile"
+            }) }}
+
+
       <h1>{{ contentTitle }}</h1>
 
       <p>If you want to stop sharing your data we'll:</p>
@@ -31,29 +38,35 @@
           <li>no longer contact you</li>
         </ul>
 
-        <form action="/{{ PROTOTYPEURL }}/your-profile/stop-sharing-confirmed" method="get">
-          {{ checkboxes({
-            "idPrefix": "yes",
-            "name": "yes",
-            "fieldset": {
-              "legend": {
-                "text": question,
-                "classes": "nhsuk-fieldset__legend--m",
-                "isPageHeading": true
-              }
+
+      <form action="/{{ PROTOTYPEURL }}/your-profile/stop-sharing-your-data" method="post">
+        {{ radios({
+          "idPrefix": "gov",
+          "name": "getRemoved",
+          "fieldset": {
+            "legend": {
+              "text": question,
+              "isPageHeading": true,
+              "classes": "nhsuk-fieldset__legend--m"
+            }
+          },
+          "items": [
+            {
+              "value": "yes",
+              "text": "Yes"
             },
-            "items": [
-              {
-                "value": "yes",
-                "text": "I want to stop sharing my data"
-              }
-            ]
-          }) }}
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
+        }) }}
 
-          <input type="submit" class="nhsuk-button" value="Confirm">
-          </input>
+        <input type="submit" class="nhsuk-button" value="Confirm">
+        </input>
 
-        </form>
+      </form>
+
     </div>
   </div>
 {% endblock %}
