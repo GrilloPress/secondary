@@ -25,14 +25,26 @@
 
       <h1>{{ contentTitle }}</h1>
 
-      <h2>Researchers</h2>
-
-      <p>Google DeepMind</p>
-
-      <h2>Length of research study</h2>
-
-      <p>6 months</p>
-
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Researchers"
+            },
+            value: {
+              text: "Google DeepMind"
+            }
+          },
+          {
+            key: {
+              text: "Length of research study"
+            },
+            value: {
+              text: "6 months"
+            }
+          }
+        ]
+      }) }}
 
         <form action="/{{ PROTOTYPEURL }}/your-match/google-deepmind-study" method="post">
           {{ radios({
