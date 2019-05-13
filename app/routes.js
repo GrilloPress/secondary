@@ -123,6 +123,38 @@ router.post('/register-as-a-data-donor/v1/your-match/google-deepmind-study', fun
   }
 });
 
+router.post('/register-as-a-data-donor/v1/your-match/we-will-share-your-data', function (req, res) {
+  let answer = req.body.researchUpdates;
+
+  if (answer === 'yes') { // the || means this OR that
+
+    res.redirect('/register-as-a-data-donor/v1/your-match/we-will-share-your-data-updates')
+
+  } else if (answer === 'no' ) {
+
+    res.redirect('/register-as-a-data-donor/v1/your-match/no-updates')
+
+  } else {
+    res.redirect('error')
+  }
+});
+
+router.post('/register-as-a-data-donor/v1/your-profile/stop-sharing-your-data', function (req, res) {
+  let answer = req.body.getRemoved;
+
+  if (answer === 'yes') { // the || means this OR that
+
+    res.redirect('/register-as-a-data-donor/v1/your-profile/stop-sharing-confirmed')
+
+  } else if (answer === 'no' ) {
+
+    res.redirect('/register-as-a-data-donor/v1/your-profile/still-sharing-confirmed')
+
+  } else {
+    res.redirect('error')
+  }
+});
+
 
 
 // Add your routes here - above the module.exports line
