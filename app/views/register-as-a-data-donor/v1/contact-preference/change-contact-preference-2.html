@@ -22,6 +22,11 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
+      {{ backLink({
+        "href": "/register-as-a-data-donor/v1/your-profile/your-data-donor-profile",
+        "text": "Back to your data donor profile"
+      }) }}
+
       <h1>{{ contentTitle }}</h1>
 
       <form action="/{{ PROTOTYPEURL }}/contact-preference-updated" method="get">
@@ -45,15 +50,11 @@
           ]
         }) }}
 
+
         <input type="submit" class="nhsuk-button" value="Continue">
         </input>
 
       </form>
-
-      {{ backLink({
-        "href": "/register-as-a-data-donor/v1/your-profile/your-data-donor-profile",
-        "text": "Back to your data donor profile"
-      }) }}
 
     </div>
   </div>
