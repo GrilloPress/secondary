@@ -1,4 +1,4 @@
-{% set PROTOTYPEURL = "register-as-a-data-donor/v1/contact-preference" %}
+{% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
 {% set serviceName = "Register as a data donor" %}
 {% set contentTitle = "Change your contact preference" %}
 {% set title = contentTitle + " - " + serviceName %}
@@ -24,7 +24,7 @@
 
       <h1>{{ contentTitle }}</h1>
 
-      <form action="/{{ PROTOTYPEURL }}/contact-preference-saved" method="get">
+      <form action="/{{ PROTOTYPEURL }}/contact-preference/contact-preference-saved" method="get">
         {{ radios({
           "idPrefix": "nhs",
           "name": "contactPreference",
