@@ -96,7 +96,7 @@ router.post('/register-as-a-data-donor/v1/register/check-your-details', function
 
   if (answer === 'yes') { // the || means this OR that
 
-    res.redirect('/register-as-a-data-donor/v1/register/do-you-want-to-register-3')
+    res.redirect('/register-as-a-data-donor/v1/register/how-your-profile-works')
 
   } else if (answer === 'no' ) {
 
@@ -107,7 +107,7 @@ router.post('/register-as-a-data-donor/v1/register/check-your-details', function
   }
 });
 
-router.post('/register-as-a-data-donor/v1/your-match/google-deepmind-study', function (req, res) {
+router.post('/register-as-a-data-donor/v1/your-match/google-deepmind-study-2', function (req, res) {
   let answer = req.body.researchStudy;
 
   if (answer === 'yes') { // the || means this OR that
