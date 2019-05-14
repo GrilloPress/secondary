@@ -1,6 +1,6 @@
-{% set PROTOTYPEURL = "register-as-a-data-donor" %}
+{% set PROTOTYPEURL = "register-as-a-data-donor/v2" %}
 {% set serviceName = "Register as a data donor" %}
-{% set contentTitle = "Register as a data donor" %}
+{% set contentTitle = "V2" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -28,25 +28,10 @@
 
       <h1>
         {{ contentTitle }}
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom"> {{ serviceName }}</span>
       </h1>
+    
 
-      <ul class="app-list--unstyled app-list-cards">
-        <li class="app-list-cards__item">
-          <a href="/{{ PROTOTYPEURL }}/v2/index">
-            <h2 class="app-list-cards__heading nhsuk-heading-m">V2</h2>
-            <p>Scenarios for testing</p>
-          </a>
-        </li>
-      </ul>
-
-      <ul class="app-list--unstyled app-list-cards">
-        <li class="app-list-cards__item">
-          <a href="/{{ PROTOTYPEURL }}/v1/index">
-            <h2 class="app-list-cards__heading nhsuk-heading-m">V1</h2>
-            <p>Initial concept for a service</p>
-          </a>
-        </li>
-      </ul>
 
 
     </div>
