@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
 {% set serviceName = "Register as a data donor" %}
-{% set contentTitle = "We've saved your preference" %}
+{% set contentTitle = "We'll send you updates about this research study" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -21,17 +21,26 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>{{ contentTitle }}</h1>
+      <h1>
+        {% if data['researchContactPreference'] == 'week' %}
+          {{ contentTitle }} every week
+        {% elif data['researchContactPreference'] == 'month' %}
+          {{ contentTitle }} every month
+        {% else %}
+          We'll send you an update about this research study when it's finished
+        {% endif %}</h1>
 
-      {% if data['researchContactPreference'] == 'never' %}
-        <p>We will not send you any updates about this research study.</p>
-      {% elif data['researchContactPreference'] == 'week' %}
-        <p>We will send you an update about this research study once a week.</p>
-      {% elif data['researchContactPreference'] == 'month' %}
-        <p>We will send you an update about this research study once a month.</p>
-      {% else %}
-        <p>We will send you an update about this research study when it has finished.</p>
-      {% endif %}
+        <p>
+          {% if data['contactPreference'] == 'email' %}
+            We'll update you by email.
+          {% elif data['contactPreference'] == 'text' %}
+            We'll update you by text.
+          {% else %}
+              We'll update you by email.
+          {% endif %}</p>
+
+        <p>You can change this at any time on your data donor profile.</p>
+
 
       {{ backLink({
         "href": "/register-as-a-data-donor/v1/your-profile/your-data-donor-profile",
