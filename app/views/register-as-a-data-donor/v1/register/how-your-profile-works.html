@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
 {% set serviceName = "Register as a data donor" %}
-{% set contentTitle = "How your data donor profile works" %}
+{% set contentTitle = "How a data donor profile works" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -28,8 +28,12 @@
 
       <p>We'll only share your data if you've confirmed you're happy for us to.</p>
 
-      <p><a href="/{{ PROTOTYPEURL }}/your-profile/your-data-donor-profile">Go to your data donor profile</a></p>
+      <form action="/{{ PROTOTYPEURL }}/register/do-you-want-to-register-3" method="get">
 
+        <input type="submit" class="nhsuk-button" value="Continue">
+        </input>
+
+      </form>
     </div>
   </div>
 {% endblock %}
