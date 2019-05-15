@@ -5,7 +5,6 @@
 {% block pageScripts %}
 {% endblock %}
 
-
 <!-- Extends the layout from /app/views/layouts/layout.html -->
 {% extends 'layouts/layout-email.html' %}
 
@@ -21,23 +20,18 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-
       <h1 class="nhsuk-heading-l">{{ contentTitle}}</h1>
-      <p>This is an example email. It's not really the code for email. This is a template mocked up to act like the ideal presentation of an email.</p>
-
-      {{ backLink({
-        "href": "../index",
-        "text": "Back to list"
-      }) }}
-
+      <p>This is an example email. It's not really the code for email.</p>
+      <p>This is a template mocked up to act like the ideal presentation of an email.</p>
     </div>
   </div>
 {% endblock %}
 
 {% block footerContent %}
-<p class="nhsuk-body-s"><strong>Why you got sent this email</strong><br /> You are receiving this email because you've clicked a link to see it</p>
+<h2 class="nhsuk-body-s nhsuk-u-margin-bottom-0">Why you got sent this email</h2>
+<p class="nhsuk-body-s">You are receiving this email because you've clicked a link to see it</p>
+<h2 class="nhsuk-body-s nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">Contact details</h2>
 <p class="nhsuk-body-s">
-  <strong>Contact details</strong><br />
   NHS Digital <br />
   1 Trevelyan Square, Boar Lane <br />
   Leeds, West Yorkshire <br />
