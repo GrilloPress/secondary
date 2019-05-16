@@ -1,7 +1,7 @@
 {% set PROTOTYPEURL = "register-as-a-data-donor/v1" %}
 {% set serviceName = "Register as a data donor" %}
 {% set contentTitle = "Research study into Crohn's disease in 18 to 30 year olds" %}
-{% set question = "Are you happy to share your data with Google DeepMind for this research study?" %}
+{% set question = "Are you happy to share your data with UK Biobank for this research study?" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -32,7 +32,7 @@
               text: "Researchers"
             },
             value: {
-              text: "Google DeepMind"
+              text: "UK Biobank"
             }
           },
           {
@@ -46,7 +46,7 @@
         ]
       }) }}
 
-        <form action="/{{ PROTOTYPEURL }}/your-match/google-deepmind-study" method="post">
+        <form action="/{{ PROTOTYPEURL }}/your-match/UK-biobank-study" method="post">
           {{ radios({
             "idPrefix": "yes",
             "name": "researchStudy",

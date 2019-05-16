@@ -107,7 +107,7 @@ router.post('/register-as-a-data-donor/v1/register/check-your-details', function
   }
 });
 
-router.post('/register-as-a-data-donor/v1/your-match/google-deepmind-study-2', function (req, res) {
+router.post('/register-as-a-data-donor/v1/your-match/UK-biobank-study-2', function (req, res) {
   let answer = req.body.researchStudy;
 
   if (answer === 'yes') { // the || means this OR that
