@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "see-how-data-is-shared/v1" %}
 {% set serviceName = "See how data from your health records has helped research and planning" %}
-{% set contentTitle = "Research studies using data from your health records" %}
+{% set contentTitle = "Organisations that are using data from your health records" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -28,8 +28,6 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-u-reading-width">
-
-
 
           <div class="nhsuk-u-margin-bottom-6">
             <h1 class="">
@@ -87,7 +85,7 @@
                 {
                   id: "5",
                   category: "Research",
-                  title: "Impact of a community based social prescribing",
+                  title: "Impact of community based social prescribing",
                   dateFirstRelease: "March 2019",
                   dateLatestRelease: "",
                   dateFinished: "",
@@ -96,24 +94,14 @@
 
                 }
 
-
-
                 ] %}
 
-              <ol class="app-study__list">
-
+              <ol class="app-list--unstyled app-list-cards">
                 {% for s in studies %}
-                <li class="app-study__list-item">
-                  <div class="app-study__list-item-container">
-                    <a href="/{{ PROTOTYPEURL }}/studies/{{s.id}}">
-                      <h2 class="app-study__list-item-heading">{{ s.organisation }}</h2>
-                      <p>See how {{ s.organisation }} have used your data</p>
-
-                      <div class="app-study__list-item-row nhsuk-u-margin-top-2">
-                        <span class="app-study-list-card__link">Find out more</span>
-                      </div>
-                    </a>
-                  </div>
+                <li class="app-list-cards__item">
+                  <a href="/{{ PROTOTYPEURL }}/organisations/{{ s.id }}">
+                    <h2 class="app-list-cards__heading nhsuk-heading-m">{{ s.organisation }}</h2>
+                  </a>
                 </li>
                 {% endfor %}
               </ol>
