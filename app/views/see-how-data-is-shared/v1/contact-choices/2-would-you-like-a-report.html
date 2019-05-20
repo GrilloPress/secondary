@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "see-how-data-is-shared/v1" %}
 {% set serviceName = "See how data from your health records has helped research and planning" %}
-{% set contentTitle = "Would you like to be sent a report about how your data has helped research and planning?" %}
+{% set contentTitle = "Would you like us to send you a report about how your data has helped research and planning?" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -23,10 +23,10 @@
     <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-u-reading-width">
           <div class="nhsuk-u-margin-bottom-6">
-            <form action="#" method="get">
+            <form action="/{{ PROTOTYPEURL }}/contact-choices/2-would-you-like-a-report" method="post">
               {{ radios({
                 "idPrefix": "gov",
-                "name": "gov",
+                "name": "report",
                 "fieldset": {
                   "legend": {
                     "text": contentTitle,

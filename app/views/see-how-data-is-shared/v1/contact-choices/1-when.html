@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "see-how-data-is-shared/v1" %}
 {% set serviceName = "See how data from your health records has helped research and planning" %}
-{% set contentTitle = "How would you like to be contacted?" %}
+{% set contentTitle = "How would you like us to contact you?" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -22,7 +22,7 @@
     <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-u-reading-width">
           <div class="nhsuk-u-margin-bottom-6">
-            <form action="" method="post">
+            <form action="/{{ PROTOTYPEURL }}/contact-choices/1-when" method="post">
               {{ radios({
                 "idPrefix": "nhs-study",
                 "name": "study",
