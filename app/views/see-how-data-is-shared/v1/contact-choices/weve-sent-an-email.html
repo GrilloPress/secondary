@@ -1,0 +1,36 @@
+{% set PROTOTYPEURL = "see-how-data-is-shared/v1" %}
+{% set serviceName = "See how data from your health records has helped research and planning" %}
+{% set contentTitle = "We've sent an email to " %}
+{% set title = contentTitle + " - " + serviceName %}
+{% block pageScripts %}
+{% endblock %}
+
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layouts/layout-transactional.html' %}
+
+<!-- Set the page title inside this block -->
+{% block pageTitle %}
+  {{ title }}
+{% endblock %}
+
+<!-- Breadcrumb goes inside this block -->
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <h1>{{contentTitle}}</h1>
+
+    <p>Click the link in your email to confirm your email address.</p>
+
+    <form action="/{{ PROTOTYPEURL }}/summary/index" method="post">
+    <input type="submit" class="nhsuk-button" value="Back to summary">
+    </input>
+
+  </form>
+
+    </div>
+  </div>
+{% endblock %}
