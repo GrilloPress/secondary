@@ -37,6 +37,22 @@ router.post('/see-how-data-is-shared/v1/contact-choices/1-when', function (req, 
   }
 });
 
+router.post('/see-how-data-is-shared/v1/contact-choices/2-when', function (req, res) {
+  let answer = req.body.report;
+
+  if (answer === 'text') {
+
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/confirm-details-report')
+
+  } else if (answer === 'email') {
+
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/confirm-details-report') }
+
+  else {
+    res.redirect('error')
+  }
+});
+
 router.post('/see-how-data-is-shared/v1/contact-choices/confirm-details', function (req, res) {
   let answer = req.body.confirmDetails;
 
@@ -77,7 +93,7 @@ router.post('/see-how-data-is-shared/v1/contact-choices/2-would-you-like-a-repor
 
   if (answer === 'yes') {
 
-    res.redirect('/see-how-data-is-shared/v1/contact-choices/confirm-details-report')
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/2-when')
 
   } else if (answer === 'no') {
 
