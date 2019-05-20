@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "see-how-data-is-shared/v1" %}
 {% set serviceName = "See how data from your health records has helped research and planning" %}
-{% set contentTitle = "Choose which year you want to see data from" %}
+{% set contentTitle = "What year do you want to look at?" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -22,19 +22,15 @@
     <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-u-reading-width">
           <div class="nhsuk-u-margin-bottom-6">
-            <h1 class="">
-              {{ contentTitle }}
-            </h1>
-            <p>You can choose what calendar year you want to see how data from your health records has helped research and planning in the NHS.</p>
             <form action="#" method="get">
               {{ radios({
                 "idPrefix": "gov",
                 "name": "gov",
                 "fieldset": {
                   "legend": {
-                    "text": "What year do you want to look at?",
-                    "isPageHeading": false,
-                    "classes": "nhsuk-fieldset__legend--l"
+                    "text": contentTitle,
+                    "isPageHeading": true,
+                    "classes": "nhsuk-fieldset__legend--xl"
                   }
                 },
                 "items": [
