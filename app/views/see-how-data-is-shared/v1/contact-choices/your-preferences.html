@@ -7,9 +7,9 @@
 
 {% set study  %}
   {% if data['study'] == 'text' %}
-    We will contact you by text we share your data for a new study.
+    We'll contact you by text we share your data for a new study.
   {% elif data['study'] == 'email' %}
-    We will contact you by email when we share your data for a new study.
+    We'll contact you by email when we share your data for a new study.
   {% else %}
     We will not contact you when we share your data for a new study.
   {% endif %}
@@ -17,9 +17,9 @@
 
 {% set report %}
   {% if data['report'] == 'text' %}
-    We will send you a report by text about how your data has helped research and planning.
+    We'll send you a report by text about how your data has helped research and planning.
   {% elif data['report'] == 'email' %}
-    We will send you an email report of how your data has helped research and planning.
+    We'll send you an email report of how your data has helped research and planning.
   {% else %}
   We will not send you a report
   {% endif %}
@@ -47,11 +47,10 @@
 
     <p>{{ report }}</p>
 
-    <form action="/{{ PROTOTYPEURL }}/summary/index" method="post">
-    <input type="submit" class="nhsuk-button" value="Back to summary">
-    </input>
-
-  </form>
+    <form action="/{{PROTOTYPEURL}}/summary/spinner" method="post">
+      <input type="submit" class="nhsuk-button" value="Back to summary page">
+      </input>
+    </form>
 
     </div>
   </div>
