@@ -6,22 +6,22 @@
 {% endblock %}
 
 {% set study  %}
-  {% if data['study'] == 'no' %}
-    We will not contact you when we share your data for a new study.
-  {% elif data['study'] == 'yes' %}
-    We wil contact you by data['?'] when we share your data for a new study.
+  {% if data['study'] == 'text' %}
+    We will contact you by text we share your data for a new study.
+  {% elif data['study'] == 'email' %}
+    We will contact you by email when we share your data for a new study.
   {% else %}
-
+    We will not contact you when we share your data for a new study.
   {% endif %}
 {% endset %}
 
 {% set report %}
-  {% if data['report'] == 'no' %}
-    We will not send you a report about how your data has helped research and planning.
-  {% elif data['study'] == 'yes' %}
-    We wil contact you by data['?'] to send you a report of how your data has helped research and planning.
+  {% if data['report'] == 'text' %}
+    We will send you a report by text about how your data has helped research and planning.
+  {% elif data['report'] == 'email' %}
+    We will send you an email report of how your data has helped research and planning.
   {% else %}
-
+  We will not send you a report
   {% endif %}
 {% endset %}
 

@@ -16,6 +16,18 @@
   {% endif %}
 {% endset %}
 
+{% set questionFiller %}
+  {% if data['report'] == 'text' %}
+    Yes, 00789101173 is my mobile phone number
+  {% elif data['report'] == 'email' %}
+    Yes, jane.doe@gmail.com is my email address
+  {% else %}
+    Yes, jane.doe@gmail.com is my email address
+  {% endif %}
+{% endset %}
+
+
+
 <!-- Extends the layout from /app/views/layouts/layout.html -->
 {% extends 'layouts/layout-transactional.html' %}
 
@@ -37,14 +49,31 @@
 
             {% if data['report'] == 'text' %}
 
-               <p>00789101173</p>
+              <dl class="nhsuk-summary-list">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Mobile phone
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    00789101173
+                  </dd>
 
-
+                </div>
+              </dl>
 
                {% else %}
 
+               <dl class="nhsuk-summary-list">
+                 <div class="nhsuk-summary-list__row">
+                   <dt class="nhsuk-summary-list__key">
+                     Email
+                   </dt>
+                   <dd class="nhsuk-summary-list__value">
+                     jane.doe@gmail.com
+                   </dd>
 
-               <p>jane.doe@gmail.com</p>
+                 </div>
+               </dl>
 
 
                {% endif %}
@@ -62,7 +91,7 @@
           "items": [
             {
               "value": "yes",
-              "text": "Yes"
+              "text": questionFiller
             },
             {
               "value": "no",

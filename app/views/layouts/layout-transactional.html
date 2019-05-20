@@ -16,13 +16,21 @@
   Transactional page layout
 {% endblock %}
 
+{% set headerHref %}
+  {% if PROTOTYPEURL === "see-how-data-is-shared/v1" %}
+    {{ "/" + PROTOTYPEURL + "/summary/index" }}
+  {% else %}
+    {{ "/" + PROTOTYPEURL }}
+  {% endif %}
+{% endset %}
+
 <!-- Header goes inside this block -->
 {% block header %}
   {{ header({
     "transactionalService": {
         "name": serviceName,
         "longName": "true",
-        "href": "/" + PROTOTYPEURL
+        "href": headerHref
       },
       "showNav": "false",
       "showSearch": "false"
