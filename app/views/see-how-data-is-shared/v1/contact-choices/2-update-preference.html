@@ -1,19 +1,9 @@
 {% set PROTOTYPEURL = "see-how-data-is-shared/v1" %}
 {% set serviceName = "See how data from your health records has helped research and planning" %}
-{% set contentTitle = "We've sent an email to " %}
+{% set contentTitle = "We've updated your preference" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
-
-{% set study  %}
-  {% if data['study'] == 'text' %}
-    mobile number
-  {% elif data['study'] == 'email' %}
-    email address
-  {% else %}
-    email address
-  {% endif %}
-{% endset %}
 
 {% set report  %}
   {% if data['report'] == 'text' %}
@@ -41,27 +31,24 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      {% if data['study'] == 'text' %}
+      <h1> {{ contentTitle }} </h1>
 
-         <h1>We’ve sent a text message</h1>
+      {% if data['report'] == 'text' %}
 
-         <p>Click the link in your text message to confirm your mobile number.</p>
-
+         <p>We'll contact you by text to {{ data['reportnewdetails'] }} to send you an annual report about how your data has been used.</p>
 
 
          {% else %}
 
 
-         <h1>We've sent you an email</h1>
-
-         <p>Click the link in your email to confirm your email address.</p>
+         <p>We'll contact you by email to {{ data['reportnewdetails'] }} to send you an annual report about how your data has been used.</p>
 
 
          {% endif %}
 
 
 
-    <form action="/{{ PROTOTYPEURL }}/?" method="post">
+    <form action="/{{ PROTOTYPEURL }}/contact-choices/2-would-you-like-a-report" method="get">
     <input type="submit" class="nhsuk-button" value="Continue">
     </input>
 

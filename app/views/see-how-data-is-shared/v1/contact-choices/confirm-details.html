@@ -33,7 +33,20 @@
 
       <h1>{{ contentTitle }} {{ study }}</h1>
 
-      <p>
+      {% if data['study'] == 'text' %}
+
+         <p>00789101173</p>
+
+
+
+         {% else %}
+
+
+         <p>jane.doe@gmail.com</p>
+
+
+         {% endif %}
+
 
       <form action="/{{ PROTOTYPEURL }}/contact-choices/confirm-details" method="post">
         {{ radios({
@@ -41,7 +54,7 @@
           "name": "confirmDetails",
           "fieldset": {
             "legend": {
-              "text": "Is this your current {{ study }} ?",
+              "text": "Is this your current " + study | trim + "?",
               "classes": "nhsuk-fieldset__legend--m"
             }
           },

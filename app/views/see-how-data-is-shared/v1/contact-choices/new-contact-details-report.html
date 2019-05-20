@@ -1,6 +1,16 @@
 {% set PROTOTYPEURL = "see-how-data-is-shared/v1" %}
 {% set serviceName = "See how data from your health records has helped research and planning" %}
-{% set contentTitle = "What data['study'] would you like us to use to contact you? " %}
+
+{% set report  %}
+  {% if data['report'] == 'text' %}
+    mobile number
+  {% elif data['report'] == 'email' %}
+    email address
+  {% else %}
+    email address
+  {% endif %}
+{% endset %}
+{% set contentTitle = "What " + report + " would you like us to use to contact you? " %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -21,7 +31,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="/{{ PROTOTYPEURL }}/contact-choices/weve-sent-an-email" method="get">
+      <form action="/{{ PROTOTYPEURL }}/contact-choices/2-update-preference" method="get">
 
         {{ input({
           "label": {

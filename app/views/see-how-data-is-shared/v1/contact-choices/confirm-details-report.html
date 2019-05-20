@@ -1,10 +1,20 @@
 {% set PROTOTYPEURL = "see-how-data-is-shared/v1" %}
 {% set serviceName = "See how data from your health records has helped research and planning" %}
-{% set contentTitle = "Check your " %}
+{% set contentTitle = "Check your" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
 
+
+{% set report %}
+  {% if data['report'] == 'text' %}
+    mobile number
+  {% elif data['report'] == 'email' %}
+    email address
+  {% else %}
+    email address
+  {% endif %}
+{% endset %}
 
 <!-- Extends the layout from /app/views/layouts/layout.html -->
 {% extends 'layouts/layout-transactional.html' %}
@@ -24,7 +34,20 @@
 
       <h1>{{ contentTitle }} {{ report }}</h1>
 
-      <p>
+
+            {% if data['report'] == 'text' %}
+
+               <p>00789101173</p>
+
+
+
+               {% else %}
+
+
+               <p>jane.doe@gmail.com</p>
+
+
+               {% endif %}
 
       <form action="/{{ PROTOTYPEURL }}/contact-choices/confirm-details-report" method="post">
         {{ radios({
@@ -32,7 +55,7 @@
           "name": "reportDetails",
           "fieldset": {
             "legend": {
-              "text": "Is this your current {{ data['study'] }}",
+              "text": "Is this your current " + report | trim + "?",
               "classes": "nhsuk-fieldset__legend--m"
             }
           },
