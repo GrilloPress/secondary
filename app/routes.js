@@ -3,8 +3,60 @@ const express = require('express');
 const router = express.Router();
 
 
+// See how data is shared routes file
+
+router.post('/see-how-data-is-shared/v1/contact-choices/1-new-study', function (req, res) {
+  let answer = req.body.study;
+
+  if (answer === 'yes') {
+
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/1-when')
+
+  } else if (answer === 'no') {
+
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/2-would-you-like-a-report') }
+
+  else {
+    res.redirect('error')
+  }
+});
+
+router.post('/see-how-data-is-shared/v1/contact-choices/1-when', function (req, res) {
+  let answer = req.body.study;
+
+  if (answer === 'email') {
+
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/1-check-email')
+
+  } else if (answer === 'text') {
+
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/1-check-mobile') }
+
+  else {
+    res.redirect('error')
+  }
+});
 
 
+
+router.post('/see-how-data-is-shared/v1/contact-choices/2-would-you-like-a-report', function (req, res) {
+  let answer = req.body.study;
+
+  if (answer === 'yes') {
+
+    res.redirect('')
+
+  } else if (answer === 'no') {
+
+    res.redirect('') }
+
+  else {
+    res.redirect('error')
+  }
+});
+
+
+// Register as a data donor routes file
 
 
 router.post('/register-as-a-data-donor/v1/eligibility/where-do-you-live', function (req, res) {

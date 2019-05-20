@@ -55,23 +55,32 @@
         <a href="/{{ PROTOTYPEURL }}/summary/all">See all studies</a>
       </p>
 
+      <h2>Where your data has been used</h2>
+      <ul class="app-list--unstyled app-list-cards">
+        <li class="app-list-cards__item">
+          <a href="/{{ PROTOTYPEURL }}/summary/organisations">
+            <h3 class="app-list-cards__heading nhsuk-heading-m">By 5 organisations</h3>
+            <p>See what organisations have used your data for research and planning</p>
+          </a>
+        </li>
+      </ul>
+
       <h2>Manage your data choices</h2>
       <ul class="app-list--unstyled app-list-cards">
         <li class="app-list-cards__item">
-          <a href="/{{ PROTOTYPEURL }}/v1/index">
+          <a href="/{{ PROTOTYPEURL }}/contact-choices/index">
             <h3 class="app-list-cards__heading nhsuk-heading-m">Set up your contact preferences</h3>
             <p>Decide whether you want to be contacted or kept up to date about data releases</p>
           </a>
         </li>
         <li class="app-list-cards__item">
-          <a href="/{{ PROTOTYPEURL }}/v1/index">
+          <a href="/{{ PROTOTYPEURL }}/data-choices/index">
             <h3 class="app-list-cards__heading nhsuk-heading-m">Choose if data from your health records is shared</h3>
             <p>Decide whether personally identifiable data can be shared for research and planning</p>
           </a>
         </li>
       </ul>
-
-</div>
+      </div>
     </div>
   </div>
 {% endblock %}
