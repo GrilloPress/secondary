@@ -24,13 +24,45 @@ router.post('/see-how-data-is-shared/v1/contact-choices/1-new-study', function (
 router.post('/see-how-data-is-shared/v1/contact-choices/1-when', function (req, res) {
   let answer = req.body.study;
 
-  if (answer === 'email') {
+  if (answer === 'text') {
 
-    res.redirect('/see-how-data-is-shared/v1/contact-choices/1-check-email')
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/confirm-details')
 
-  } else if (answer === 'text') {
+  } else if (answer === 'email') {
 
-    res.redirect('/see-how-data-is-shared/v1/contact-choices/1-check-mobile') }
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/confirm-details') }
+
+  else {
+    res.redirect('error')
+  }
+});
+
+router.post('/see-how-data-is-shared/v1/contact-choices/confirm-details', function (req, res) {
+  let answer = req.body.confirmDetails;
+
+  if (answer === 'yes') {
+
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/2-would-you-like-a-report')
+
+  } else if (answer === 'no') {
+
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/new-contact-details') }
+
+  else {
+    res.redirect('error')
+  }
+});
+
+router.post('/see-how-data-is-shared/v1/contact-choices/confirm-details-report', function (req, res) {
+  let answer = req.body.reportDetails;
+
+  if (answer === 'yes') {
+
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/your-preferences')
+
+  } else if (answer === 'no') {
+
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/new-contact-details-report') }
 
   else {
     res.redirect('error')
@@ -39,16 +71,17 @@ router.post('/see-how-data-is-shared/v1/contact-choices/1-when', function (req, 
 
 
 
+
 router.post('/see-how-data-is-shared/v1/contact-choices/2-would-you-like-a-report', function (req, res) {
-  let answer = req.body.study;
+  let answer = req.body.report;
 
   if (answer === 'yes') {
 
-    res.redirect('')
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/confirm-details-report')
 
   } else if (answer === 'no') {
 
-    res.redirect('') }
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/your-preferences') }
 
   else {
     res.redirect('error')
