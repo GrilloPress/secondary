@@ -1,6 +1,6 @@
 {% set PROTOTYPEURL = "see-how-data-is-shared/v1" %}
 {% set serviceName = "See how data from your health records has helped research and planning" %}
-{% set contentTitle = "How data from your health records has helped research and planning" %}
+{% set contentTitle = "Data from your health records has been shared as part of 6 studies" %}
 {% set title = contentTitle + " - " + serviceName %}
 {% block pageScripts %}
 {% endblock %}
@@ -33,29 +33,9 @@
         <h1 class="">
           {{ contentTitle }}
         </h1>
-
-        <div class="nhsuk-grid-row nhsuk-promo-group">
-          <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
-            {{ promo({
-              "href": "/" + PROTOTYPEURL + "/summary/all",
-              "classes": "app-promo-group--thin",
-              "headingLevel": "2",
-              "heading": "In 6 studies",
-              "description": "See what studies have used data from your health records."
-            }) }}
-          </div>
-          <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
-            {{ promo({
-              "href": "/" + PROTOTYPEURL + "/summary/organisations",
-              "classes": "app-promo-group--thin",
-              "headingLevel": "2",
-              "heading": "By 5 organisations",
-              "description": "See what organisations have used your data for research and planning."
-            }) }}
-          </div>
-        </div>
       </div>
 
+      <h2>How your data has been used</h2>
       <ul class="app-list--unstyled app-list-cards">
         <li class="app-list-cards__item">
           <a href="/{{ PROTOTYPEURL }}/summary/research">
@@ -74,6 +54,16 @@
       <p>
         <a href="/{{ PROTOTYPEURL }}/summary/all">See all studies</a>
       </p>
+
+      <h2>Where your data has been used</h2>
+      <ul class="app-list--unstyled app-list-cards">
+        <li class="app-list-cards__item">
+          <a href="/{{ PROTOTYPEURL }}/summary/organisations">
+            <h3 class="app-list-cards__heading nhsuk-heading-m">By 5 organisations</h3>
+            <p>See what organisations have used your data for research and planning</p>
+          </a>
+        </li>
+      </ul>
 
       <h2>Manage your data choices</h2>
       <ul class="app-list--unstyled app-list-cards">
