@@ -18,7 +18,7 @@ router.post('/see-how-data-is-shared/v1/contact-choices/1-new-study', function (
 
   else {
     // res.redirect('error')
-    res.redirect('/see-how-data-is-shared/v1/contact-choices/2-would-you-like-a-report') }
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/2-would-you-like-a-report')
   }
 });
 
@@ -35,7 +35,7 @@ router.post('/see-how-data-is-shared/v1/contact-choices/1-when', function (req, 
 
   else {
     // res.redirect('error')
-    res.redirect('/see-how-data-is-shared/v1/contact-choices/confirm-details') }
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/confirm-details')
   }
 });
 
@@ -52,7 +52,7 @@ router.post('/see-how-data-is-shared/v1/contact-choices/2-when', function (req, 
 
   else {
     // res.redirect('error')
-    res.redirect('/see-how-data-is-shared/v1/contact-choices/confirm-details-report') }
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/confirm-details-report')
   }
 });
 
@@ -69,7 +69,7 @@ router.post('/see-how-data-is-shared/v1/contact-choices/confirm-details', functi
 
   else {
     // res.redirect('error')
-    res.redirect('/see-how-data-is-shared/v1/contact-choices/new-contact-details') }
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/new-contact-details')
   }
 });
 
@@ -86,12 +86,9 @@ router.post('/see-how-data-is-shared/v1/contact-choices/confirm-details-report',
 
   else {
     // res.redirect('error')
-    res.redirect('/see-how-data-is-shared/v1/contact-choices/new-contact-details-report') }
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/new-contact-details-report')
   }
 });
-
-
-
 
 router.post('/see-how-data-is-shared/v1/contact-choices/2-would-you-like-a-report', function (req, res) {
   let answer = req.body.report;
@@ -106,7 +103,7 @@ router.post('/see-how-data-is-shared/v1/contact-choices/2-would-you-like-a-repor
 
   else {
     // res.redirect('error')
-    res.redirect('/see-how-data-is-shared/v1/contact-choices/your-preferences') }
+    res.redirect('/see-how-data-is-shared/v1/contact-choices/your-preferences')
   }
 });
 
