@@ -13,6 +13,17 @@
   {% endif %}
 {% endset %}
 
+{% set aiAnswer  %}
+  {% if data['shareAI'] == 'decidelater' %}
+    I'll decide later using my data donor profile
+  {% else %}
+    {{ data['shareAI'] | capitalize }}
+  {% endif %}
+{% endset %}
+
+
+
+
 
 <!-- Extends the layout from /app/views/layouts/layout.html -->
 {% extends 'layouts/layout-transactional.html' %}
@@ -94,7 +105,7 @@
               text: "Share for artificial intelligence"
             },
             value: {
-              html: data['shareAI'] | capitalize
+              html: aiAnswer
             },
             actions: {
               items: [
