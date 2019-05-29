@@ -260,6 +260,27 @@ router.post('/register-as-a-data-donor/v1/your-profile/stop-sharing-your-data', 
 });
 
 
+router.post('/register-as-a-data-donor/v3/register/share-for-ai', function (req, res) {
+  let answer = req.body.shareAI
+
+  if (answer === 'yes') { // the || means this OR that
+
+    res.redirect('/register-as-a-data-donor/v3/register/check-your-answers')
+
+  } else if (answer === 'no' ) {
+
+    res.redirect('/register-as-a-data-donor/v3/register/check-your-answers')
+
+  } else if (answer === 'unsure' ) {
+
+    res.redirect('/register-as-a-data-donor/v3/register/unsure-ai')
+
+  } else {
+    res.redirect('error')
+  }
+});
+
+
 
 // Add your routes here - above the module.exports line
 
